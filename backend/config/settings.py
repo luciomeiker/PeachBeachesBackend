@@ -121,7 +121,8 @@ DATABASES = {
         'HOST': os.getenv('DB_HOST'),
         'PORT': os.getenv('DB_PORT', '5432'),
         # En local alcanza con "prefer". Las bases en la nube suelen pedir "require".
-        'OPTIONS': {'sslmode': os.getenv('DB_SSLMODE', 'prefer')},
+        'OPTIONS':
+            {'sslmode': os.getenv('DB_SSLMODE', 'prefer')},
     }
 }
 
