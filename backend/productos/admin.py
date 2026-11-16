@@ -1,5 +1,16 @@
 from django.contrib import admin
+
 from .models import Categoria, Producto
 
-admin.site.register(Categoria)
-admin.site.register(Producto)
+
+@admin.register(Categoria)
+class CategoriaAdmin(admin.ModelAdmin):
+    list_display = ('id', 'nombre', 'descripcion')
+    search_fields = ('nombre',)
+
+
+@admin.register(Producto)
+class ProductoAdmin(admin.ModelAdmin):
+    list_display = ('id', 'nombre', 'marca', 'categoria', 'precio', 'stock')
+    search_fields = ('nombre', 'marca', 'descripcion')
+    list_filter = ('categoria', 'marca')
