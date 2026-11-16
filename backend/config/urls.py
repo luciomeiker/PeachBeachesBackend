@@ -20,3 +20,35 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+from django.urls import path
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    
+    # Rutas de usuarios (auth y registro)
+    path('api/auth/', include('usuarios.urls')),
+    
+    # Rutas de productos y categorías
+    path('api/', include('productos.urls')),
+    
+    # Rutas de carrito y pedidos
+    path('api/', include('pedidos.urls')),
+    
+    # Si habías agregado la de contacto en otra app, la incluís acá también:
+    # path('api/', include('contacto.urls')),
+]
+
+
+urlpatterns = [
+    # Carrito
+    path('carrito/', CarritoDetailView.as_view(), name='carrito-detail'),
+    path('carrito/agregar/', AgregarItemCarritoView.as_view(), name='carrito-agregar'),
+    
+    # Pedidos / Checkout
+    path('pedidos/checkout/', FinalizarCompraView.as_view(), name='finalizar-compra'),
+    path('pedidos/', HistorialPedidosView.as_view(), name='historial-pedidos'),
+]

@@ -1,0 +1,1 @@
+path('contacto/', MensajeCreateView.as_view(), name='contacto-create'),
