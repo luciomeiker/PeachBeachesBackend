@@ -1,14 +1,5 @@
 from decimal import Decimal
 
-<<<<<<< HEAD
-class HistorialPedidosView(generics.ListAPIView):
-    permission_classes = [IsAuthenticated]
-    serializer_class = PedidoSerializer  # 👈 Acá lo vinculamos
-    
-    def get_queryset(self):
-        # e.iii) Un usuario solo puede ver sus propios pedidos y nadie más
-        return Pedido.objects.filter(usuario=self.request.user)
-=======
 from django.db import transaction
 from drf_spectacular.utils import extend_schema
 from rest_framework import serializers, status, viewsets
@@ -101,4 +92,3 @@ class FinalizarCompraView(APIView):
             carrito.items.all().delete()  # vacía el carrito
 
         return Response(PedidoSerializer(pedido).data, status=status.HTTP_201_CREATED)
->>>>>>> 203f5b15f623e7978912f665dbd8f9d47779e807
