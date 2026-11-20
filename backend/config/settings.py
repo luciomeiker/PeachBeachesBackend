@@ -72,14 +72,10 @@ INSTALLED_APPS = [
     # Propias
     'usuarios',
     'productos',
-<<<<<<< HEAD
-    'pedidos',
-
-=======
     'carrito',
     'pedidos',
     'contacto',
->>>>>>> 203f5b15f623e7978912f665dbd8f9d47779e807
+
 ]
 
 MIDDLEWARE = [

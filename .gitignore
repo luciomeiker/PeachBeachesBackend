@@ -1,2 +1,18 @@
+# Secretos
 .env
+
+# Entornos virtuales
 venv/
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Django
+db.sqlite3
+staticfiles/
+
+# Editores
+.idea/
+.vscode/
