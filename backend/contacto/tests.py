@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-from django.test import TestCase
-
-# Create your tests here.
-=======
 from rest_framework import status
 from rest_framework.test import APITestCase
 
@@ -37,4 +32,3 @@ class ContactoTests(APITestCase):
 
     def test_solo_acepta_post(self):
         self.assertEqual(self.client.get(self.url).status_code, status.HTTP_405_METHOD_NOT_ALLOWED)
->>>>>>> 203f5b15f623e7978912f665dbd8f9d47779e807
